@@ -1,3 +1,5 @@
+# 0x00 - TypeScript
+
 At the end of this project, I'm expected to be able to explain to anyone, without the help of Google:
 
 - Basic types in Typescript
