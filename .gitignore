@@ -1,3 +1,6 @@
 **node_modules**
 **package-lock.js**
 0x00-TypeScript/task_3/js/crud.js
+**/dist/main.js**
+**/public/bundle.js**
+0x01-Webpack/task_3/public/**
