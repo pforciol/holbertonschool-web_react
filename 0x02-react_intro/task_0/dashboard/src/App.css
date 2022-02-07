@@ -38,3 +38,7 @@ h1 {
   padding-top: 1.5vh;
   border-top: #e1003c solid 4px;
 }
+
+.App-footer p {
+  font-style: italic;
+}
