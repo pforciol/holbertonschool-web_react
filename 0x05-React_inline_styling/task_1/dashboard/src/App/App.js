@@ -76,6 +76,14 @@ const styles = StyleSheet.create({
     minHeight: '75vh',
     padding: '50px',
   },
+
+  body: {
+    display: 'inline',
+  },
+
+  footer: {
+    padding: '0',
+  },
 });
 
 App.defaultProps = {
