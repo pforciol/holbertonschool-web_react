@@ -24,12 +24,13 @@ class Notifications extends React.Component {
   }
 
   render() {
+    const { handleDisplayDrawer, handleHideDrawer } = this.props;
     return (
       <React.Fragment>
         <div
           id="menuItem"
           className={css([styles.menuItem])}
-          onClick={this.props.handleDisplayDrawer}
+          onClick={handleDisplayDrawer}
         >
           Your notifications
         </div>
@@ -44,7 +45,7 @@ class Notifications extends React.Component {
                 border: 'none',
                 cursor: 'pointer',
               }}
-              onClick={this.props.handleHideDrawer}
+              onClick={handleHideDrawer}
             >
               <img
                 src={icon}
