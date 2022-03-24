@@ -4,3 +4,4 @@
 **/dist/main.js**
 **/public/bundle.js**
 0x01-Webpack/task_3/public/**
+.gitignore
