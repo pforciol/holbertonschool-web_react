@@ -1,14 +1,20 @@
 import React from 'react';
+
 import { StyleSheet, css } from 'aphrodite';
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: '',
       password: '',
       enableSubmit: false,
     };
+
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -23,11 +29,6 @@ class Login extends React.Component {
     }
   }
 
-  handleLoginSubmit = (e) => {
-    e.preventDefault();
-    this.props.logIn(this.state.email, this.state.password);
-  };
-
   handleChangeEmail = (e) => {
     this.setState({ email: e.target.value });
   };
@@ -36,7 +37,13 @@ class Login extends React.Component {
     this.setState({ password: e.target.value });
   };
 
+  handleLoginSubmit = (e) => {
+    e.preventDefault();
+    this.props.logIn(this.state.email, this.state.password);
+  };
+
   render() {
+    const { email, password, enableSubmit } = this.state;
     return (
       <React.Fragment>
         <p>Login to access the full dashboard</p>
@@ -46,7 +53,7 @@ class Login extends React.Component {
             <input
               type="email"
               name="email"
-              value={this.state.email}
+              value={email}
               onChange={this.handleChangeEmail}
               autoComplete="email"
               className={css(styles.input)}
@@ -57,7 +64,7 @@ class Login extends React.Component {
             <input
               type="password"
               name="password"
-              value={this.state.password}
+              value={password}
               onChange={this.handleChangePassword}
               autoComplete="current-password"
               className={css(styles.input)}
@@ -67,7 +74,7 @@ class Login extends React.Component {
             type="submit"
             value="OK"
             className={css(styles.label)}
-            disabled={!this.state.enableSubmit}
+            disabled={!enableSubmit}
           />
         </form>
       </React.Fragment>

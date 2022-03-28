@@ -1,10 +1,12 @@
 import React from 'react';
-import icon from '../assets/close-icon.png';
-import { getLatestNotification } from '../utils/utils';
+
 import NotificationItem from './NotificationItem';
-import PropTypes from 'prop-types';
 import NotificationItemShape from './NotificationItemShape';
+
+import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
+
+import icon from '../assets/close-icon.png';
 
 class Notifications extends React.Component {
   constructor(props) {
@@ -12,8 +14,13 @@ class Notifications extends React.Component {
   }
 
   render() {
-    const { handleDisplayDrawer, handleHideDrawer, markNotificationAsRead } =
-      this.props;
+    const {
+      handleDisplayDrawer,
+      handleHideDrawer,
+      markNotificationAsRead,
+      displayDrawer,
+      listNotifications,
+    } = this.props;
 
     return (
       <React.Fragment>
@@ -24,7 +31,7 @@ class Notifications extends React.Component {
         >
           Your notifications
         </div>
-        {this.props.displayDrawer && (
+        {displayDrawer && (
           <div className={('Notifications', css(styles.notifications))}>
             <button
               id="menuClose"
@@ -43,14 +50,14 @@ class Notifications extends React.Component {
                 style={{ width: '1em', height: '1em' }}
               />
             </button>
-            {this.props.listNotifications.length > 0 ? (
+            {listNotifications.length > 0 ? (
               <>
                 <p>Here is the list of notifications</p>
                 <ul
                   style={{ marginBottom: '0' }}
                   className={css(styles.minList)}
                 >
-                  {this.props.listNotifications.map((notification) => (
+                  {listNotifications.map((notification) => (
                     <NotificationItem
                       key={notification.id}
                       type={notification.type}

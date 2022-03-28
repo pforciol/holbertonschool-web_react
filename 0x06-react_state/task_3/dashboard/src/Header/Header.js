@@ -1,7 +1,9 @@
 import React from 'react';
-import logo from '../assets/logo.jpg';
-import { StyleSheet, css } from 'aphrodite';
+
 import { AppContext } from '../App/AppContext';
+import { StyleSheet, css } from 'aphrodite';
+
+import logo from '../assets/logo.jpg';
 
 class Header extends React.Component {
   constructor(props) {
@@ -9,6 +11,8 @@ class Header extends React.Component {
   }
 
   render() {
+    const { user, logOut } = this.context;
+
     return (
       <div className={('App-header', css(styles.appHeader))}>
         <img
@@ -17,16 +21,10 @@ class Header extends React.Component {
           className={css(styles.appHeaderImg)}
         />
         <h1>School dashboard</h1>
-        {this.context.user && this.context.user.isLoggedIn && (
+        {user && user.isLoggedIn && (
           <p id="logoutSection" className={css(styles.logoutSection)}>
-            Welcome{' '}
-            <b className={css(styles.logoutSectionB)}>
-              {this.context.user.email}
-            </b>{' '}
-            <span
-              className={css(styles.logoutSectionSpan)}
-              onClick={this.context.logOut}
-            >
+            Welcome <b className={css(styles.logoutSectionB)}>{user.email}</b>{' '}
+            <span className={css(styles.logoutSectionSpan)} onClick={logOut}>
               (logout)
             </span>
           </p>

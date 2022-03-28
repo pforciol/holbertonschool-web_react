@@ -1,6 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+
 import BodySectionWithMarginBottom from './BodySectionWithMarginBottom';
+
+import { shallow } from 'enzyme';
 import { StyleSheetTestUtils } from 'aphrodite';
 
 beforeEach(() => {

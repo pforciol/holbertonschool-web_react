@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
-import './Footer.css';
-import { getFooterCopy, getFullYear } from '../utils/utils';
+
 import { AppContext } from '../App/AppContext';
+import { getFooterCopy, getFullYear } from '../utils/utils';
+
+import './Footer.css';
 
 const Footer = () => {
   const value = useContext(AppContext);
+
   return (
     <footer className="App-footer">
       <p>

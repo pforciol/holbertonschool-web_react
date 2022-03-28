@@ -1,6 +1,8 @@
 import React from 'react';
+
 import CourseListRow from './CourseListRow';
 import CourseShape from './CourseShape';
+
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
@@ -36,8 +38,6 @@ const CourseList = ({ listCourses }) => {
           <CourseListRow textFirstCell={'No course available yet'} />
         </tbody>
       )}
-
-      <tbody></tbody>
     </table>
   );
 };

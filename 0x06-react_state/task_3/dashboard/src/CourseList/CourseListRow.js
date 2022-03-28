@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
 
 CourseListRow.desfaultProps = {
   isHeader: false,
+  textSecondCell: null,
   textSecondCell: null,
 };
 

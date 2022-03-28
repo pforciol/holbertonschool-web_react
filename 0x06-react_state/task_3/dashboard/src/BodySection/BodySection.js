@@ -1,12 +1,14 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 
 class BodySection extends React.Component {
   render() {
+    const { title, children } = this.props;
     return (
       <div className="bodySection">
-        <h2>{this.props.title}</h2>
-        {this.props.children}
+        <h2>{title}</h2>
+        {children}
       </div>
     );
   }
@@ -14,6 +16,7 @@ class BodySection extends React.Component {
 
 BodySection.propTypes = {
   title: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default BodySection;
