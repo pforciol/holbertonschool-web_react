@@ -6,9 +6,7 @@ const printBestStudents = (object) => {
     return student.score > 70;
   });
 
-  const capFirstChar = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
+  const capFirstChar = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
   const JSObject = filtered.toJS();
 
